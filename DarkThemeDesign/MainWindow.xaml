@@ -1,0 +1,64 @@
+﻿<Window x:Class="DarkThemeDesign.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DarkThemeDesign"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="426.315" Width="721.053" Style="{DynamicResource MyWin}"  WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <!--<Window.Resources>
+        <ResourceDictionary Source="MyResources.xaml"/>
+    </Window.Resources>-->
+    <Grid Background="#FF313131">
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="138,183,0,0" Height="21" />
+        <Button x:Name="button2" Content="X" VerticalAlignment="Top" Margin="682,5,5,0" Height="20" Style="{StaticResource btnPlain}" BorderThickness="0" BorderBrush="{x:Null}" Click="button2_Click" />
+        <TextBox x:Name="textBox" Height="23" TextWrapping="Wrap" Text="TextBox" Width="120" Margin="126,90,271,206"/>
+        <Label x:Name="label" Content="Login Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,1,0,0" Width="275"/>
+        <Button x:Name="btnCompanyNew" Content="" HorizontalAlignment="Left" Margin="238,181,0,0" VerticalAlignment="Top" 
+        	Width="23" Cursor="Hand" Height="23" TabIndex="787895">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="text.png" Stretch="Uniform"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="label3" Content="Login Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,51,0,0" Width="275" Background="#FF530887"/>
+        <ComboBox x:Name="cmbTest" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="309,201,0,0"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="153" Margin="380,30,0,0" VerticalAlignment="Top" Width="279" Background="{x:Null}" Foreground="#FFFDF9F9"/>
+        <DataGrid x:Name="dg" HorizontalAlignment="Stretch" Margin="10,226,10,10" CanUserResizeRows="False" CanUserAddRows="False"  ColumnWidth="*"  AutoGenerateColumns="False" CanUserResizeColumns="False" Background="{x:Null}" VerticalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Check">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=MyViewModelProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Check2">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<Image Source="text.png" Width="30" Height="20" HorizontalAlignment="Center"/>-->
+                            <Button Content="Click" Click="Button_Click">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="text.png" Width="30" Height="20" HorizontalAlignment="Center"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding NAME}" Header="NAME"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker HorizontalAlignment="Left" Margin="62,110,0,0" VerticalAlignment="Top" Background="{x:Null}"/>
+    </Grid>
+</Window>
